@@ -9,18 +9,18 @@ This folder contains design files for the logo creation task. The logo is for a 
 
 - Files: 
   - `VoltRide_Logo_NameOfContributor.svg`
-  - `VoltRide_Logo.png`
+  - `VoltRide_Logo_NameOfContributor.png`
 
 ### 2. **Poster**
 This folder contains the poster design files for the **FutureCon 2024** tech conference. The poster features a high-tech, clean aesthetic, with bold typography and futuristic imagery, designed to capture the theme of AI, robotics, and the future of technology.
 
 - Files:
   - `FutureCon_Poster_NameOfContributor.svg`
-  - `FutureCon_Poster.jpg`
+  - `FutureCon_Poster_NameOfContributor.jpg`
 
 ### 3. **UI**
 This folder contains the design for a single screen interface for the **LingoFlow** language-learning app. The UI design focuses on user progress tracking, daily challenges, and upcoming lessons, with an approachable and structured layout using progress bars and interactive elements.
 
 - Files:
   - `LingoFlow_UI_NameOfContributor.fig`
-  - `LingoFlow_UI.png`
+  - `LingoFlow_UI_NameOfContributor.png`
