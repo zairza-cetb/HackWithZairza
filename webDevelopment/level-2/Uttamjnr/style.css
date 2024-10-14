@@ -1,0 +1,165 @@
+/* Universal properties  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+
+  background-color: #f9ffe3;
+}
+/* For responsiveness */
+@media only screen and (min-width: 0px) and (max-width: 740px) {
+  body ul li {
+    width: 80%;
+  }
+  body .main {
+    width: 80%;
+    border-radius: 20px;
+  }
+}
+h1::selection {
+  /* color: red; */
+  background: #e7a324;
+}
+/* Main Page  */
+.container {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  background-image: url(elements/leaves-5635707\ compressed.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+/* Main box for To-Do List  */
+.main {
+  align-self: center;
+  border-radius: 30px;
+  box-shadow: #3c221b 3px 8px 5px;
+  background-color: #f9ffe3;
+  width: 60vw;
+  transition: 0.3s;
+}
+.main:hover {
+  box-shadow: #3c221b 15px 20px 10px;
+}
+/* Header section  */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: #3c221b;
+  font-size: 50px;
+  font-weight: 900;
+  border-radius: 5px;
+  padding: 2px 8px;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  background-color: #e49c15;
+}
+/* Task list Section styling  */
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  margin: 10px;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  user-select: none;
+  color: #eaba62;
+  width: 40%;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 1px 2px 2px;
+  background-color: #3c221b;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.4s;
+}
+ul li:hover {
+  color: #e8a934;
+  box-shadow: 2px 4px 2px;
+  border-radius: 12px;
+  background-color: #462015;
+  transform: scale(1.1);
+}
+/* Input section styling  */
+.add-task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 0.5;
+}
+.add-task input {
+  border: none;
+  color: #eaba62;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 1px 2px 2px;
+  background-color: #3c221b;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+}
+input::placeholder {
+  color: #92743c;
+}
+input::placeholder::selection {
+  color: #e49c15;
+}
+/* Cross-Button  */
+.remove-btn {
+  align-self: flex-end;
+  background-color: #e8a934;
+  border-radius: 4px;
+  width: 15px;
+  transition: 0.2s;
+}
+.remove-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+/* Label for Checkboxes  */
+label {
+  padding: 3px;
+  border-radius: 3px;
+}
+label:hover {
+  cursor: pointer;
+}
+/* Checkbox Styling  */
+input[type="checkbox"] {
+  width: 1em;
+  height: 1rem;
+  accent-color: #e49c15;
+}
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+button {
+  background-color: #e49c15;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+}
+button:active {
+  background-color: #f3bd33;
+}
