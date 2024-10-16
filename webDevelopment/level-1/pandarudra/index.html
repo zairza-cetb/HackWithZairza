@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Background video that plays automatically -->
     <video
       autoplay
       muted
@@ -21,24 +22,36 @@
       id="myVideo"
       src="https://cdn.pixabay.com/video/2023/10/02/183279-870457579_large.mp4"
       style="
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-        z-index: -1;
+        position: fixed; /* Fixes the video in place */
+        right: 0; /* Aligns the video to the right */
+        bottom: 0; /* Aligns the video to the bottom */
+        min-width: 100%; /* Ensures the video covers the full width */
+        min-height: 100%; /* Ensures the video covers the full height */
+        z-index: -1; /* Places the video behind other content */
       "
     ></video>
+
+    <!-- Main title of the application -->
     <h1>Task Buddy</h1>
+
     <div class="box">
+      <!-- Input field for adding a new task -->
       <input type="text" class="container" placeholder="Add a new task..." />
+      <!-- Button to add the task (currently not functional) -->
       <button class="add">Add</button>
+
+      <!-- Container for displaying the list of tasks -->
       <div class="tasks">
+        <!-- Example of a task item -->
         <div class="task">
           <input type="checkbox" />
+          <!-- Checkbox for task completion -->
           <p>Task 1</p>
+          <!-- Task description -->
           <button class="delete">
+            <!-- Button to delete the task -->
             <i class="fa-solid fa-trash"></i>
+            <!-- Font Awesome icon for trash -->
           </button>
         </div>
         <div class="task">
@@ -56,6 +69,8 @@
           </button>
         </div>
       </div>
+
+      <!-- Footer section for additional information or controls -->
       <div class="foot"></div>
     </div>
   </body>

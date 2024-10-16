@@ -1,8 +1,11 @@
+/* Reset margin, padding, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Set font, height, width, and layout for body and html */
 body,
 html {
   font-family: cursive;
@@ -18,6 +21,8 @@ html {
   opacity: 0.9;
   backdrop-filter: blur(5px);
 }
+
+/* Style for h1 elements */
 h1 {
   font-size: 2rem;
   color: #fff;
@@ -27,6 +32,8 @@ h1 {
     cursor: pointer;
   }
 }
+
+/* Style for h2 elements */
 h2 {
   font-size: 1.5rem;
   color: #fff;
@@ -36,6 +43,8 @@ h2 {
     cursor: pointer;
   }
 }
+
+/* Style for input container */
 .container {
   height: 10%;
   border: 2px solid #fff;
@@ -47,6 +56,7 @@ h2 {
   padding: 1vw;
 }
 
+/* Style for box container */
 .box {
   display: flex;
   justify-content: flex-start;
@@ -54,9 +64,10 @@ h2 {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  flex-direction: column;
   gap: 1rem;
 }
+
+/* Style for add button */
 .add {
   display: flex;
   justify-content: center;
@@ -79,6 +90,7 @@ h2 {
   }
 }
 
+/* Style for tasks container */
 .tasks {
   display: flex;
   justify-content: flex-start;
@@ -88,6 +100,8 @@ h2 {
   gap: 1rem;
   flex-direction: column;
 }
+
+/* Style for individual task */
 .task {
   display: flex;
   justify-content: space-between;
@@ -107,6 +121,8 @@ h2 {
     transform: scale(1.1);
   }
 }
+
+/* Style for checkbox input */
 input[type="checkbox"] {
   width: 30px;
   height: 30px;
@@ -118,11 +134,13 @@ input[type="checkbox"] {
   transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Style for checked checkbox */
 input[type="checkbox"]:checked {
   background-color: #4caf50;
   transform: scale(1.2);
 }
 
+/* Style for checked checkbox before pseudo-element */
 input[type="checkbox"]:checked::before {
   content: "✔";
   display: block;
@@ -131,6 +149,8 @@ input[type="checkbox"]:checked::before {
   font-size: 1vw;
   line-height: 1.5vw;
 }
+
+/* Style for delete button */
 .delete {
   background-color: transparent;
   color: red;
@@ -140,10 +160,14 @@ input[type="checkbox"]:checked::before {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
+/* Style for completed task text */
 input[type="checkbox"]:checked + p {
   text-decoration: line-through;
   color: #4caf50;
 }
+
+/* Style for footer */
 .foot {
   height: 8%;
   width: 10%;
