@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Register</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <div class="auth-container">
+      <!-- login form -->
+
+      <div class="login form">
+        <h2>Login</h2>
+        <input
+          id="login-username"
+          class="input"
+          type="text"
+          placeholder="Enter your Username"
+        />
+        <input
+          id="login-password"
+          class="input"
+          type="text"
+          placeholder="Enter your Password"
+        />
+        <button id="login-btn" class="button">Login</button>
+        <div class="toggle">
+          <span class="text">Don't have an account?</span>
+          <a id="show-register" href="#">Register</a>
+        </div>
+      </div>
+
+      <!-- register form -->
+
+      <div class="register form" style="display: none">
+        <h2>Register</h2>
+        <input
+          id="register-username"
+          class="input"
+          type="text"
+          placeholder="Enter your Username"
+        />
+        <input
+          id="register-password"
+          class="input"
+          type="text"
+          placeholder="Enter your Password"
+        />
+        <button id="register-button" class="button">Register</button>
+        <div class="toggle">
+          <span class="text">Already have an account?</span>
+          <a id="show-login" href="#">Login</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- To-do App -->
+
+    <div class="todo-app" style="display: none">                            
+
+      <!-- countdown timer -->
+      <div id="ten-countdown"><span></span></div>
+
+      <h1>Welcome to Todo App</h1>
+      <div class="wrapper">
+        <form class="todo-form">
+          <input
+            id="todo-input"
+            type="text"
+            placeholder="write anything and hit enter to add"
+            autocomplete="off"
+          />
+          <button id="add-button">ADD</button>
+        </form>
+        <ul id="todo-list"></ul>
+      </div>
+      <button id="logout-btn" class="button">Log-Out</button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
