@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Background video that plays automatically -->
+    <video
+      autoplay
+      muted
+      loop
+      id="myVideo"
+      src="https://cdn.pixabay.com/video/2023/10/02/183279-870457579_large.mp4"
+      style="
+        position: fixed; /* Fixes the video in place */
+        right: 0; /* Aligns the video to the right */
+        bottom: 0; /* Aligns the video to the bottom */
+        min-width: 100%; /* Ensures the video covers the full width */
+        min-height: 100%; /* Ensures the video covers the full height */
+        z-index: -1; /* Places the video behind other content */
+      "
+    ></video>
+
+    <!-- Main title of the application -->
+    <h1>Task Buddy</h1>
+    <h2></h2>
+    <!-- Date of the day -->
+
+    <div class="box">
+      <!-- Input field for adding a new task -->
+      <input type="text" class="container" placeholder="Add a new task..." />
+      <!-- Button to add the task, calls addTask() function on click -->
+      <button class="add" onclick="addTask()">Add</button>
+
+      <!-- Container for displaying the list of tasks -->
+      <div class="tasks"></div>
+
+      <!-- Footer section for additional information or controls -->
+      <div class="foot"></div>
+    </div>
+
+    <!-- Link to an external JavaScript file for functionality -->
+    <script src="script.js"></script>
+  </body>
+</html>
