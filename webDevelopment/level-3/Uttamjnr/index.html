@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Login/Registration Form -->
+    <div class="auth-container" id="auth-container"   >
+      <h1 id="auth-title">Login</h1>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="auth-button">Login</button>
+      <p id="switch-auth">
+        Don't have an account? <span id="toggle-auth">Register</span>
+      </p>
+    </div>
+
+    <!-- Main To-Do List Page -->
+    <div class="container" id="todo-container" style="display:none" ">
+      <div class="main">
+        <div class="header">
+          <h1>To-Do List</h1>
+          <button id="logout-button">Logout</button>
+        </div>
+        <ul class="Task-list">
+          <div class="add-task">
+            <input
+              type="text"
+              id="new-task"
+              placeholder="Enter your new Task"
+            />
+            <button id="atb">Add</button>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
