@@ -23,8 +23,10 @@ class ToDoList {
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.className = "task-checkbox";
 
     li.appendChild(checkbox);
+    li.appendChild(document.createTextNode(taskText));
 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
