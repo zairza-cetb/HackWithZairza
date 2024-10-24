@@ -23,4 +23,5 @@ Happy Hacking!
 3. add your code with your github profile name as the filename in the specified folder
 4. Create a pull request
 
+Thank You for contributing to HackWithZairza
 ![](img/footer-hacober.png)

@@ -1,0 +1,183 @@
+/* Reset margin, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set font, height, width, and layout for body and html */
+body,
+html {
+  font-family: cursive;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.6;
+  flex-direction: column;
+  background-color: #000;
+  opacity: 0.9;
+  backdrop-filter: blur(5px);
+}
+
+/* Style for h1 elements */
+h1 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  &&:hover {
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+  }
+}
+
+/* Style for h2 elements */
+h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  &&:hover {
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+  }
+}
+
+/* Style for input container */
+.container {
+  height: 10%;
+  border: 2px solid #fff;
+  border-radius: 2vw;
+  width: 60%;
+  background: #000;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1vw;
+}
+
+/* Style for box container */
+.box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* Style for add button */
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  height: 4rem;
+  font-size: large;
+  text-transform: uppercase;
+  background-color: #000;
+  font-family: cursive;
+  border-radius: 1.3vw;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 0 0.5vw #fff;
+  font-weight: bolder;
+  &&:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+/* Style for tasks container */
+.tasks {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+/* Style for individual task */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: 10%;
+  width: 300px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1vw;
+  border-radius: 1vw;
+  gap: 1rem;
+  &&:hover {
+    background-color: #1f1717;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+/* Style for checkbox input */
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #000;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Style for checked checkbox */
+input[type="checkbox"]:checked {
+  background-color: #4caf50;
+  transform: scale(1.2);
+}
+
+/* Style for checked checkbox before pseudo-element */
+input[type="checkbox"]:checked::before {
+  content: "✔";
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size: 1vw;
+  line-height: 1.5vw;
+}
+
+/* Style for delete button */
+.delete {
+  background-color: transparent;
+  color: red;
+  font-size: 20px;
+  padding: 0.5vw;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Style for completed task text */
+input[type="checkbox"]:checked + p {
+  text-decoration: line-through;
+  color: #4caf50;
+}
+
+/* Style for footer */
+.foot {
+  height: 8%;
+  width: 10%;
+  background-size: cover;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-image: url("https://hacktoberfest.com/_next/static/media/logo-hacktoberfest-11--footer.cc639da3.svg");
+  &&:hover {
+    transform: scale(1.1);
+    bottom: 3px;
+  }
+}
