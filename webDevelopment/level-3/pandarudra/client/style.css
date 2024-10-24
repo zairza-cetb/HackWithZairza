@@ -1,0 +1,52 @@
+/* Reset margin, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set font, height, width, and layout for body and html */
+body,
+html {
+  font-family: cursive;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.6;
+  flex-direction: column;
+}
+.landing {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1729073402241-4e37935cabe4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+.cta-btn {
+  background-color: #00bcd4;
+  color: blue;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+  &&:hover {
+    background-color: #0097a7;
+    transform: scale(1.05);
+  }
+}
