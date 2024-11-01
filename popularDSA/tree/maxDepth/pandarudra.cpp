@@ -37,7 +37,7 @@ int maxDepth(TreeNode* root) {
     // Recursively find the height of the right subtree
     int rh = maxDepth(root->right);
 
-    // return the maximum max depth found so far
+    // return the maximum max depth found 
     return 1 + max(lh, rh);
 }
 
