@@ -1,9 +1,9 @@
 ![](img/header-hacktober.png)
 
-<h1 style="color:#A0A0FF; font-size:4rem;" align="center"> 
+<h1 style="color:#a0a0ff; font-size:4rem;" align="center"> 
 HackWithZairza
 </h1>
-<p style="color:#A0A0FF; font-size:1.5rem;" align="center">
+<p style="color:#a0a0ff; font-size:1.5rem;" align="center">
 The Flagship Technical Society of OUTR - Zairza presents to you HackWithZairza.  <br> A month long Open Source Extravaganza. 
 We are thrilled to have you join us for this exciting celebration of open-source contributions, innovation, and collaboration.     <br> <br>
 Hacktoberfest is an annual global event that encourages people from all backgrounds to participate in open-source projects, make meaningful contributions, and grow their skills.      
@@ -27,3 +27,4 @@ Happy Hacking!
 Thank You for contributing to HackWithZairza.
 
 ![](img/footer-hacktober.png)
+
