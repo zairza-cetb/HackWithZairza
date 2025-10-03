@@ -18,10 +18,12 @@ Happy Hacking!
 3. You can View your Profile and Stats @ [Profile](https://hacktoberfest.com/profile/)
 
 ## Code Guidelines
-1. fork the repo to your own github Account
-2. clone the repo to your local machine
-3. add your code with your github profile name as the filename in the specified folder
+1. Fork the repo to your own github Account
+2. Clone the repo to your local machine
+3. Add your code with your github profile name as the filename in the specified folder
 4. Create a pull request
 
 Thank You for contributing to HackWithZairza
+
 ![](img/footer-hacober.png)
+
