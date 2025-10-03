@@ -1,6 +1,8 @@
-## LEVEL 2 || WEB DEVELOPMENT
+### To-Do List Managers
 
-Add Functionality to your To-Do List Application.
-</br>    
-1. implement a function to add new Tasks to the List    
-2. implement a function to remove Tasks from the List
+- Options: Task manager CLI with add/list/complete/delete commands
+- Features: JSON storage, priority levels, due dates, filtering
+- Example: 
+```
+python todo.py add "Task description" --priority high
+```
