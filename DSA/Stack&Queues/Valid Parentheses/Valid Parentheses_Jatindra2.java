@@ -1,7 +1,7 @@
 /*
 Problem: Valid Parentheses
 
-Describtion:
+Description:
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 An input string is valid if:
 1. Open brackets must be closed by the same type of brackets.
@@ -30,6 +30,17 @@ Steps:
 Time and Space Complexity:
     - Time Complexity: O(n) — each character is processed exactly once.
     - Space Complexity: O(n) — in the worst case, the stack holds all opening brackets.
+
+Example:
+    Input: "({[]})"
+    Push ( → [ ( ]
+    Push { → [ ( { ]
+    Push [ → [ ( { [ ]
+    See ] → matches [ → pop
+    See } → matches { → pop
+    See ) → matches ( → pop
+    Stack is now empty →  Valid
+
     
 */
 
