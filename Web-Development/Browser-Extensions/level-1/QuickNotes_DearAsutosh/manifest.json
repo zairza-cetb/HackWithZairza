@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Notes",
+  "version": "1.0",
+  "description": "A simple browser extension for taking quick notes with auto-save, draft-save and clear options.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["storage", "activeTab","downloads"]
+}
