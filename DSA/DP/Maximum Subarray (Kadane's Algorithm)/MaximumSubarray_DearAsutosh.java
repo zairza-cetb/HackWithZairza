@@ -5,7 +5,7 @@
  * 
  */
 
-public class DearAsutosh_MaximumSubarray {
+public class MaximumSubarray_DearAsutosh {
 
     /*
       =============================EASY EXPLANATION============================
