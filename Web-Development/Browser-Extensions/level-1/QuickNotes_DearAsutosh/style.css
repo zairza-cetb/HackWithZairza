@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/RalewayFont.ttf') format('truetype');
+  font-weight: 500;
+}
+*{
+    margin: 0;padding: 0;
+    font-family: 'Raleway';
+}
+
+body {
+  background-color: #000000;
+  color: #fff;
+  width: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #8b5cf6;
+  font-weight: 700;
+}
+
+#toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.stylebtns {
+  border: none;
+  background: #1f1f22;
+  color: #c7c7c7;
+  font-weight: 700;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stylebtns.active {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.stylebtns:hover {
+  background-color: #8b5cf6;
+  color: white;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#noteInput {
+  background-color: #000000;
+  border-radius: 10px;
+  border: 1px solid whitesmoke;
+  padding: 10px;
+  min-height: 70px;
+  outline: none;
+  margin-bottom: 10px;
+  font-size: 20px;
+  width: 80%;
+}
+
+#noteInput[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.btn {
+  flex: 1;
+  margin: 0 4px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #8b5cf6;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  width: 100px;
+}
+
+.btn:hover {
+  background-color: #a78bfa;
+}
+
+.btn.danger {
+  background-color: #ef4444;
+}
+
+.btn.danger:hover {
+  background-color: #f87171;
+}
+
+.btn.secondary {
+  background-color: #3b82f6;
+}
+
+.btn.secondary:hover {
+  background-color: #60a5fa;
+}
+
+.show-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.note-item {
+  background: #1f1f22;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.note-item:hover {
+  background: #2a2a2d;
+}
+
+.note-text {
+  flex: 1;
+  margin-right: 10px;
+  word-break: break-word;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: #ef4444;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  color: #f87171;
+}
