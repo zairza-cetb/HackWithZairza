@@ -1,4 +1,4 @@
-
+/* CUSTOM FONT-FACE */
 @font-face {
   font-family: 'Raleway';
   src: url('fonts/RalewayFont.ttf') format('truetype');
@@ -89,7 +89,6 @@ button[type="submit"] {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
 button[type="submit"]:hover {
   background: linear-gradient(135deg, #0096c7, #023e8a);
 }

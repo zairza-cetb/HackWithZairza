@@ -1,73 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task Manager</title>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preload" href="fonts/RalewayFont.ttf" as="font" type="font/ttf" crossorigin>
-
-  <!-- Font Awesome CDN -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-</head>
-
-<body>
-  <header>
-    <h2> Task Manager <i class="fa-solid fa-list-check"></i></h2>
-  </header>
-
-  <!-- Task Input Form -->
-  <form id="taskForm">
-    <input 
-      type="text" 
-      id="taskTitle" 
-      placeholder="Enter your task..." 
-      required 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="preload"
+      href="fonts/RalewayFont.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
     />
-
-    <input 
-      type="date" 
-      id="taskDate" 
-      required 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+  </head>
 
-    <!-- Priority Options -->
-    <div class="priority-section">
-      <label class="priority-label">Priority:</label>
-      <div class="priority-options">
-        <label>
-          <input type="radio" name="priority" value="Low" checked>
-          Low
-        </label>
-        <label>
-          <input type="radio" name="priority" value="Medium">
-          Medium
-        </label>
-        <label>
-          <input type="radio" name="priority" value="High">
-          High
-        </label>
+  <body>
+    <header>
+      <h2>Task Manager <i class="fa-solid fa-list-check"></i></h2>
+    </header>
+    <form id="taskForm">
+      <input
+        type="text"
+        id="taskTitle"
+        placeholder="Enter your task..."
+        required
+      />
+      <input type="date" id="taskDate" required />
+      <div class="priority-section">
+        <label class="priority-label">Priority:</label>
+        <div class="priority-options">
+          <label>
+            <input type="radio" name="priority" value="Low" checked />
+            Low
+          </label>
+          <label>
+            <input type="radio" name="priority" value="Medium" />
+            Medium
+          </label>
+          <label>
+            <input type="radio" name="priority" value="High" />
+            High
+          </label>
+        </div>
       </div>
-    </div>
 
-    <button type="submit">
-       Add Task <i class="fa-solid fa-plus"></i>
-    </button>
-  </form>
-
-  <!-- Task List -->
-  <ul id="taskList"></ul>
-
-  <!-- Footer -->
-  <footer>
-    <span id="taskCount">0 tasks</span>
-  </footer>
-
-  <script src="popup.js"></script>
-</body>
+      <button type="submit">Add Task <i class="fa-solid fa-plus"></i></button>
+    </form>
+    <ul id="taskList"></ul>
+    <footer>
+      <span id="taskCount">0 tasks</span>
+    </footer>
+    <script src="popup.js"></script>
+  </body>
 </html>
