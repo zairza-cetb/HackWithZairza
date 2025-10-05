@@ -4,7 +4,7 @@
  * Description: Find the maximum profit you can achieve by buying and selling
  *              multiple times. You can buy and sell on the same day.
  */
-public class DearAsutosh_BestTimeToBuyAndSellStockII {
+public class BestTimeToBuyAndSellStockII_DearAsutosh {
     // we have to return maximum profit from prices array
     public static int maxProfit(int[] prices) {
         int profit = 0;
