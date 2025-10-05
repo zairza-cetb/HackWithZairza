@@ -1,0 +1,85 @@
+import os
+import shutil
+import argparse
+import logging
+from pathlib import Path
+EXTENSION_MAP = {
+    "images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg"],
+    "documents": [".pdf", ".doc", ".docx", ".txt", ".ppt", ".pptx", ".xls", ".xlsx"],
+    "videos": [".mp4", ".avi", ".mkv", ".mov", ".flv"],
+    "audio": [".mp3", ".wav", ".flac", ".aac"],
+    "archives": [".zip", ".rar", ".tar", ".gz", ".7z"],
+}
+logging.basicConfig(
+    filename="organizer.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+#%(asctime)s → timestamp (when it happened)
+#%(levelname)s → the log level (INFO, ERROR, etc.)
+#%(message)s → your custom message (what happened)
+def get_unique_filename(dest_folder: Path, filename: str) -> Path:
+    base, ext = os.path.splitext(filename)
+    counter = 1
+    new_path = dest_folder / filename
+
+    while new_path.exists():
+        new_name = f"{base}({counter}){ext}"
+        new_path = dest_folder / new_name
+        counter += 1
+
+    return new_path
+def organize_by_extension(directory: Path, dry_run: bool = False):
+    """Organize files by extension into folders."""
+    if not directory.exists() or not directory.is_dir():
+        raise ValueError(f"Invalid directory: {directory}")
+
+    for file in directory.iterdir():
+        if file.is_file():
+            ext = file.suffix.lower()
+            #.iterdir() → lists everything inside the directory (both files and folders).
+            #file.is_file() → filters out subfolders (you only want to move files, not directories).
+
+            # Determine destination folder
+            folder_name = "others"
+            for category, extensions in EXTENSION_MAP.items():
+                if ext in extensions:
+                    folder_name = category
+                    break
+
+            dest_folder = directory / folder_name
+            dest_folder.mkdir(exist_ok=True)
+
+            dest_path = get_unique_filename(dest_folder, file.name)
+
+            if dry_run:
+                print(f"[DRY-RUN] Would move: {file.name} → {dest_folder.name}/")
+            else:
+                try:
+                    shutil.move(str(file), str(dest_path))
+                    logging.info(f"Moved: {file.name} → {dest_folder.name}/")
+                    print(f"Moved: {file.name} → {dest_folder.name}/")
+                except Exception as e:
+                    logging.error(f"Error moving {file.name}: {e}")
+                    print(f"Error moving {file.name}: {e}")
+
+
+def main():
+    """Command-line interface."""
+    parser = argparse.ArgumentParser(description="Organize files by extension.")
+    parser.add_argument("--path", required=True, help="Directory to organize")
+    parser.add_argument("--dry-run", action="store_true", help="Preview changes without moving files")
+    args = parser.parse_args()
+
+    try:
+        organize_by_extension(Path(args.path).expanduser(), dry_run=args.dry_run)
+        print("\n✅ Organization complete.")
+        if args.dry_run:
+            print("No files were actually moved (dry-run mode).")
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        logging.error(e)
+
+
+if __name__ == "__main__":
+    main()
