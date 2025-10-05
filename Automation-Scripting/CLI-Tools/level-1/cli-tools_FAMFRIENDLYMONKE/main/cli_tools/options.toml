@@ -1,0 +1,4 @@
+[unit-conversion]
+name = "Unit Conversion"
+function_location = "modules.unit_conversion.module.convert_units"
+input_values = ["from", "to"]

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Notes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quick Notes <i class="fa-solid fa-clipboard"></i></h1>
+      <div class="content">
+        <div id="toolbar">
+          <button id="boldButton" class="stylebtns">B</button>
+          <button id="italicButton" class="stylebtns">I</button>
+          <button id="underlineButton" class="stylebtns">U</button>
+        </div>
+        <!-- Don't be confuse I used a div instead of input/textarea to make 
+        rich text editing like BOLD,italic,underline. -->
+        <div
+          id="noteInput"
+          contenteditable="true"
+          placeholder="Type your note here..."
+        ></div>
+        <div class="buttons">
+          <button id="saveButton" class="btn">
+            Save <i class="fa-solid fa-floppy-disk"></i>
+          </button>
+          <button id="clearButton" class="btn danger">
+            Clear All <i class="fa-solid fa-trash"></i>
+          </button>
+          <button id="downloadButton" class="btn secondary">
+            Download <i class="fa-solid fa-download"></i>
+          </button>
+        </div>
+      </div>
+      <div class="show-task">
+        <div class="show-content" id="notesList"></div>
+      </div>
+    </div>
+  </body>
+  <script src="popup.js"></script>
+</html>
