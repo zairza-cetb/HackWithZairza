@@ -1,26 +1,30 @@
 # Design
 
-This repository contains design tasks focused on creating a logo, a poster, and a single screen UI. Each folder contains the design files and relevant resources for these creative tasks.
+This repository will contain design tasks focused on creating a logo, a poster, and a single screen UI. <br>
+Each folder will contain design files and relevant resources submitted by contributors for these creative tasks.
 
 ## Folders Overview
 
-### 1. **Logo**
-This folder contains design files for the logo creation task. The logo is for a futuristic electric bike company called **VoltRide**. The logo reflects speed, innovation, and sustainability, with elements like lightning bolts, modern typography, and sleek lines to appeal to a tech-savvy audience.
+### 1. Logo
 
-- Files: 
-  - `VoltRide_Logo_NameOfContributor.svg`
-  - `VoltRide_Logo_NameOfContributor.png`
+This folder will contain design files for the logo creation task. The logo is for an AI-powered study companion app called **BrainSync**. The logo should reflect intelligence, learning, and connectivity, incorporating elements like neural networks, book symbols, or brain imagery with modern, friendly typography to appeal to students and lifelong learners.
 
-### 2. **Poster**
-This folder contains the poster design files for the **FutureCon 2024** tech conference. The poster features a high-tech, clean aesthetic, with bold typography and futuristic imagery, designed to capture the theme of AI, robotics, and the future of technology.
+**Required Files:**
+- `BrainSync_Logo_NameOfContributor.svg`
+- `BrainSync_Logo_NameOfContributor.png`
 
-- Files:
-  - `FutureCon_Poster_NameOfContributor.svg`
-  - `FutureCon_Poster_NameOfContributor.jpg`
+### 2. Poster
 
-### 3. **UI**
-This folder contains the design for a single screen interface for the **LingoFlow** language-learning app. The UI design focuses on user progress tracking, daily challenges, and upcoming lessons, with an approachable and structured layout using progress bars and interactive elements.
+This folder will contain poster design files for **CodeCraft Summit 2025**, an open-source developer conference celebrating collaboration and innovation. The poster should feature a clean, developer-friendly aesthetic with bold typography, code-inspired elements (like brackets, terminal windows), and vibrant colors that capture the spirit of open-source community and creativity.
 
-- Files:
-  - `LingoFlow_UI_NameOfContributor.fig`
-  - `LingoFlow_UI_NameOfContributor.png`
+**Required Files:**
+- `CodeCraft_Poster_NameOfContributor.svg`
+- `CodeCraft_Poster_NameOfContributor.jpg`
+
+### 3. UI
+
+This folder will contain the design for a single screen interface for **EcoTrack**, a personal carbon footprint tracking app. The UI should focus on displaying the user's daily carbon impact, eco-friendly tips, and progress toward sustainability goals. Design should be clean, with data visualizations (charts/graphs), nature-inspired colors, and an encouraging layout that motivates users.
+
+**Required Files:**
+- `EcoTrack_UI_NameOfContributor.fig`
+- `EcoTrack_UI_NameOfContributor.png`
