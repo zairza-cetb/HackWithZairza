@@ -1,6 +1,6 @@
 # Unit Conversion Module
 
-Convert between different units of measurement using the API-Ninjas unit conversion API.
+Convert between different units of measurement using Python's Pint library.
 
 ## Features
 
@@ -9,43 +9,58 @@ Convert between different units of measurement using the API-Ninjas unit convers
   - Length (m, ft, in)
   - Temperature (C, F, K)
   - Volume (l, gal, ml)
-
-## Configuration
-
-Requires API key from API-Ninjas in `.env`:
-
-```
-UNIT_CONVERSION_API_KEY=your_api_key_here
-```
+  - And many more units supported by Pint!
 
 ## Usage
 
 ```sh
 # Convert weight
-python main.py convert --from kg --to lbs --value 75
+python main.py unit-conversion --from 75kg --to lbs
 
 # Convert length
-python main.py convert --from m --to ft --value 10
+python main.py unit-conversion --from 10m --to ft
 
 # Convert temperature
-python main.py convert --from C --to F --value 25
+python main.py unit-conversion --from 25C --to F
 ```
 
-## API Integration
+## Implementation Details
 
-Uses the API-Ninjas unit conversion endpoint for accurate conversions. Includes error handling for:
+Uses the Pint library for accurate unit conversions with features including:
 
-- Invalid units
-- API errors
-- Connection issues
+- Local conversion (no internet required)
+- Extensive unit support
+- High precision calculations
+- Scientific notation support
+
+## Error Handling
+
+The module handles various error cases:
+
+- Invalid unit formats
+- Unsupported units
+- Invalid numerical values
+- Incompatible unit conversions
 
 ## Error Messages
 
-- "Invalid unit type" - Unit not supported
-- "API error" - Problem with conversion service
-- "Network error" - Connection issues
+- "Invalid '--from' format" - Input format should be like '10kg'
+- "Conversion error" - Invalid units or values provided
+- "Error during conversion" - General conversion failures
 
 ## Dependencies
 
-- requests>=2.31.0
-- python-dotenv>=1.0.0
+- pint>=0.20
+- toml>=0.10.2
+
+## Examples
+
+```sh
+# Basic conversions
+python main.py unit-conversion --from 10kg --to lbs
+python main.py unit-conversion --from 100m --to ft
+python main.py unit-conversion --from 1L --to ml
+
+# Temperature conversions
+python main.py unit-conversion --from 32F --to C
+```

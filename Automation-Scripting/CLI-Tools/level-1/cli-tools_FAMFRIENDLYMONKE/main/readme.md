@@ -24,20 +24,6 @@ pip install -r requirements.txt
 
 - [Unit Conversion](modules/unit_conversion/README.md) - Convert between different units of measurement
 
-## Usage
-
-Basic unit conversion:
-
-```sh
-python main.py convert --from kg --to lbs --value 75
-```
-
-For detailed options:
-
-```sh
-python main.py --help
-```
-
 ## Project Structure
 
 ```

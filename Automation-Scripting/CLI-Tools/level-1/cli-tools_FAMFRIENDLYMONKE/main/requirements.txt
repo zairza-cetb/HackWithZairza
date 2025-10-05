@@ -1,2 +1,4 @@
 requests
 python-dotenv
+toml
+pint

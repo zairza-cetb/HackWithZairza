@@ -1,33 +1,28 @@
-import requests
 import re
-from dotenv import load_dotenv
-import os
+from pint import UnitRegistry
 
 def convert_units(**kwargs):
-    load_dotenv()
     source = kwargs.get("from")
     target = kwargs.get("to")
 
+    # Create unit registry
+    ureg = UnitRegistry()
+
     match_source = re.match(r"(\d+)([a-zA-Z]+)", source)
     if not match_source:
-        print("Invalid '--from' format. Use like 10ft")
+        print("Invalid '--from' format. Use like 10kg")
         return
 
     value, unit_from = match_source.groups()
     unit_to = target
 
-    api_url = f"https://api.api-ninjas.com/v1/convertunit?value={value}&from={unit_from}&to={unit_to}"
-    api_key = os.getenv("UNIT_CONVERSION_API_KEY")
-    headers = {"X-Api-Key": api_key} 
-
-    response = requests.get(api_url, headers=headers)
-
-    if response.status_code == 200:
-        data = response.json()
-        result = data.get("new_value", None)
-        if result:
-            print(f"{result} {unit_to}")
-        else:
-            print("Conversion failed.")
-    else:
-        print("Error calling API:", response.text)
+    try:
+        value = float(value)
+        quantity = value * getattr(ureg, unit_from)
+        result = quantity.to(unit_to)
+        
+        print(f"{result:.2f}")
+    except (AttributeError, ValueError) as e:
+        print(f"Conversion error: Invalid units or value. {str(e)}")
+    except Exception as e:
+        print(f"Error during conversion: {str(e)}")
