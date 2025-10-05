@@ -24,12 +24,12 @@ Happy Hacking!
 3. Add your code with your github profile name as the filename in the specified folder
 4. Create a pull request
 
-## Connect us Discord
+## Connect on Discord 
 
-[HackWithZairza](https://discord.com/channels/707751027973161132/1424384150059876464)
-Thank You for contributing to HackWithZairza.
+Discord Link: [HackWithZairza](https://discord.com/channels/707751027973161132/1424384150059876464) <br> <br>
 
 ![](img/footer-hacktober.png)
+
 
 
 
