@@ -5,8 +5,7 @@
  *              multiple times. You can buy and sell on the same day.
  */
 public class DearAsutosh_BestTimeToBuyAndSellStockII {
-
-    // we have to retur maximum profit from prices array
+    // we have to return maximum profit from prices array
     public static int maxProfit(int[] prices) {
         int profit = 0;
         for (int i = 1; i < prices.length; i++) {
@@ -17,9 +16,8 @@ public class DearAsutosh_BestTimeToBuyAndSellStockII {
         }
         return profit;
     }
-
     public static void main(String[] args) {
-        int[] prices = {7, 1, 5, 3, 6, 4};
+        int[] prices = { 7, 1, 5, 3, 6, 4 };
         System.out.println("Maximum Profit: " + maxProfit(prices));
     }
 }
