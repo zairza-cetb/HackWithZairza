@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <div class="container">
+        <header>
+        <h1>Word Counter</h1>
+        </header>
+
+        <textarea id="textInput" placeholder="Select text on a page, right-click → Analyze selection, or paste text here"></textarea>
+
+        <div class="controls">
+        <button id="analyzeBtn">Analyze</button>
+        <button id="clearBtn">Clear</button>
+        </div>
+
+        <div id="results" class="results">
+        <div>Words: <strong id="wordCount">0</strong></div>
+        <div>Characters (with spaces): <strong id="charCount">0</strong></div>
+        <div>Characters (no spaces): <strong id="charCountNoSpace">0</strong></div>
+        <div>Sentences: <strong id="sentenceCount">0</strong></div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
