@@ -1,0 +1,66 @@
+:root {
+    --bg: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+    margin: 0;
+    padding: 12px;
+    width: 360px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+}
+
+.container h1 {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+textarea#textInput {
+    width: 100%;
+    min-height: 100px;
+    padding: 8px;
+    resize: vertical;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.controls {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: var(--accent);
+    color: white;
+    font-size: 13px;
+}
+
+button#clearBtn {
+    background: #6b7280;
+}
+
+.results {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+}
+
+.results div {
+    background: #f9fafb;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 13px;
+}
