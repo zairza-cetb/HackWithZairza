@@ -3,25 +3,27 @@
  * 
  * Problem: Container With Most Water (LeetCode #11)
  * 
- * Approach:
- * 1. Use two pointers, left and right, starting at both ends of the array.
- * 2. Calculate area formed by lines at left and right.
- * 3. Move the pointer with the smaller height inward to potentially find a bigger area.
- * 4. Track and return the maximum area.
+ * Greedy Two-Pointer Approach:
+ * 1. Initialize two pointers, left and right, at both ends of the array.
+ * 2. Calculate the area between the two lines (width × min(height[left], height[right])).
+ * 3. Keep track of the maximum area encountered.
+ * 4. Apply a greedy decision:
+ *    - Move the pointer with the smaller height inward,
+ *      since moving the taller one won't increase the area.
+ * 5. Repeat until both pointers meet.
+ * 6. Return the maximum area obtained.
  * 
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
 
-
-
- 
 import java.util.Scanner;
 
 public class ContainerWithMostWater_dibyajyoti1515 {
 
     public static int maxArea(int[] height) {
-        int left = 0, right = height.length - 1;
+        int left = 0;
+        int right = height.length - 1;
         int maxArea = 0;
 
         while (left < right) {
@@ -30,13 +32,14 @@ public class ContainerWithMostWater_dibyajyoti1515 {
             int area = width * currentHeight;
             maxArea = Math.max(maxArea, area);
 
-            // Move the smaller height inward
+            // Greedy move: shift the smaller height inward
             if (height[left] < height[right]) {
-                left++;
+                left++;  // Move left pointer rightward to find a taller line
             } else {
-                right--;
+                right--; // Move right pointer leftward to find a taller line
             }
         }
+
         return maxArea;
     }
 
