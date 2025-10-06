@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Simple Word Counter",
+    "version": "1.0",
+    "description": "Counts words, characters, and sentences for selected text.",
+    "icons": { "128": "icon.png" },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "permissions": ["storage", "activeTab", "contextMenus"],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
