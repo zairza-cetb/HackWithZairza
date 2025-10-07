@@ -4,7 +4,7 @@
  * Description: Find the number of distinct ways to climb n stairs
                 when you can take 1 or 2 steps at a time.
  */
-public class DearAsutosh_ClimbingStairs {
+public class ClimbingStairs_DearAsutosh {
     // Return ways to climb n stairs
     public static int climbStairs(int n) {
         if (n <= 3)
