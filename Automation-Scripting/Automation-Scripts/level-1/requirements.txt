@@ -1,0 +1,3 @@
+# This script only uses modules from the Python Standard Library.
+# No external dependencies are required.
+# It is recommended to use Python 3.6 or newer for full Pathlib support.
