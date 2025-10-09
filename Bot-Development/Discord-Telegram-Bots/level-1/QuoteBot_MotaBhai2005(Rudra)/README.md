@@ -131,9 +131,4 @@ Developed with ❤️ by **Rudra Narayan Samantaray**
 
 ---
 
-## 📜 License
-
-This project is licensed under the **MIT License** — free to use, modify, and distribute with proper attribution.
-
-```
 
