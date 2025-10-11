@@ -43,10 +43,11 @@ Follow these steps to get your **Quote Bot** running locally.
 ```bash
 git clone https://github.com/YourUsername/QuoteBot_YourUsername.git
 cd QuoteBot_YourUsername
-Create and activate a virtual environment:
+````
 
-bash
-Copy code
+2. **Create and activate a virtual environment:**
+
+```bash
 # macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
@@ -54,61 +55,78 @@ source venv/bin/activate
 # Windows
 python -m venv venv
 venv\Scripts\activate
-Install dependencies:
+```
 
-bash
-Copy code
+3. **Install dependencies:**
+
+```bash
 pip install -r requirements.txt
-Your requirements.txt:
+```
 
-ini
-Copy code
+Your `requirements.txt`:
+
+```
 python-telegram-bot==20.3
 python-dotenv==1.0.0
-Configure Environment Variables:
+```
 
-Copy .env.example to .env
+4. **Configure Environment Variables:**
 
-Add your token:
+* Copy `.env.example` to `.env`
+* Add your token:
 
-env
-Copy code
+```env
 TELEGRAM_TOKEN="your_telegram_token_here"
-Run the bot:
+```
 
-bash
-Copy code
+5. **Run the bot:**
+
+```bash
 python bot.py
+```
+
 Terminal should show:
 
-vbnet
-Copy code
+```
 Rudra's Quote Bot is Running.....
-📱 Usage
+```
+
+---
+
+## 📱 Usage
+
 Interact with the bot using these commands:
 
-Command	Description
-/start	Displays a welcome message
-/quote	Sends a random quote
-/fact	Shares an interesting fact
-/joke	Tells a funny joke
-/inspire	Sends an inspirational message
-/help	Shows a list of available commands
+| Command    | Description                        |
+| ---------- | ---------------------------------- |
+| `/start`   | Displays a welcome message         |
+| `/quote`   | Sends a random quote               |
+| `/fact`    | Shares an interesting fact         |
+| `/joke`    | Tells a funny joke                 |
+| `/inspire` | Sends an inspirational message     |
+| `/help`    | Shows a list of available commands |
 
-Example:
+**Example:**
 
-You: /quote
-Bot: “The only way to do great work is to love what you do. — Steve Jobs”
+**You:** `/quote`
+**Bot:** “The only way to do great work is to love what you do. — Steve Jobs”
 
-You: /joke
-Bot: “I have a lot of jokes about unemployed people, but none of them work.”
+**You:** `/joke`
+**Bot:** “I have a lot of jokes about unemployed people, but none of them work.”
 
-📝 Notes
-Works best in private chats or groups where it has access to messages.
+---
 
-Keep your Telegram token secret. Do not share it publicly.
+## 📝 Notes
 
-💖 Credits
-Developed with ❤️ by Rudra Narayan Samantaray
+* Works best in **private chats** or **groups** where it has access to messages.
+* Keep your **Telegram token secret**. Do not share it publicly.
 
-“Code with purpose, share with kindness.”
+---
+
+## 💖 Credits
+
+Developed with ❤️ by **Rudra Narayan Samantaray**
+
+> “Code with purpose, share with kindness.”
+
+---
