@@ -1,0 +1,6 @@
+# Ignoring unrequired modules
+
+.venv/
+__pycache__/
+.vscode/
+uv.lock
