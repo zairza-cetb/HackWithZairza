@@ -220,6 +220,9 @@ BasicCRUDAPI_AbhiTripathy/
 │   └── routes.py    # API routes
 ├── models/
 │   └── models.py    # Pydantic models + in-memory data
-├── pyproject.toml
+├── uv.lock          # To recreate environment
+├── .gitignore
+├── .python-version  # To recreate environment
+├── pyproject.toml   # To recreate environment
 └── README.md
 ```
