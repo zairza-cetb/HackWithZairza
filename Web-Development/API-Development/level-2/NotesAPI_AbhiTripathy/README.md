@@ -12,25 +12,25 @@ Prerequisites:
 ```bash
 pip install uv
 ```
-1. (Optional) Create and activate a virtual environment using uv:
+2. (Optional) Create and activate a virtual environment using uv:
 Inside your project directory
 ```bash
 uv init --python 3.11
 ```
 
-2. Install dependencies (from the project root):
+3. Install dependencies (from the project root):
 
 ```bash
 uv add fastapi[all]
 ```
 
-3. Run the app (from project root where `main.py` lives):
+4. Run the app (from project root where `main.py` lives):
 
 ```bash
 uv run uvicorn main:app --reload --port 8000
 ```
 
-4. Open the interactive API docs:
+5. Open the interactive API docs:
 
 http://127.0.0.1:8000/docs
 
