@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Task Manager",
+  "version": "1.0",
+  "description": "A lightweight task manager with due dates, priority tracking, and persistent storage using Chrome Storage API.",
+  "permissions": ["storage", "tabs", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "author": "DearAsutosh"
+}
