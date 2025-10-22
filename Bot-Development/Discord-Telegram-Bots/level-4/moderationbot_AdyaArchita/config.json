@@ -1,0 +1,12 @@
+{
+  "mod_log_chat_id": 0,
+  "banned_words": [
+    "example_profanity",
+    "spam_word"
+  ],
+  "super_admin_ids": [
+    123456789
+  ],
+  "database_path": "moderation.db",
+  "backup_directory": "./backups"
+}
