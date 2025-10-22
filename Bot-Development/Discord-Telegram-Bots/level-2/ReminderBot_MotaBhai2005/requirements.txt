@@ -1,4 +1,0 @@
-discord.py==2.6.0
-python-dotenv==1.0.1
-pytz==2025.7
-tzdata==2025.7
