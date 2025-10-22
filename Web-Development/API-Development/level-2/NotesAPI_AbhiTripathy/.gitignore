@@ -1,0 +1,5 @@
+#Ignoring unrequired files and folders
+
+.venv/
+.vscode
+__pycache__
