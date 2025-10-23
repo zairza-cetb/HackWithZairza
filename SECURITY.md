@@ -1,17 +1,17 @@
-# 🛡️ Security Policy
+# Security Policy
 
-## 📌 Supported Versions
+## Supported Versions
 
 We aim to keep `HackWithZairza` up to date and secure. Please see below for the versions we currently support with security updates.
 
 | Version | Supported          |
 |---------|--------------------|
-| Latest  | ✅ Yes              |
-| Older   | ❌ No               |
+| Latest  |  Yes              |
+| Older   |  No               |
 
 ---
 
-## 📬 Reporting a Vulnerability
+## Reporting a Vulnerability
 
 If you discover a security vulnerability, **please do not open an issue** on GitHub.
 
@@ -24,11 +24,11 @@ Instead, follow these steps:
    - Potential impact
    - Any mitigation or workaround suggestions
 
-⌛ We aim to respond to security reports **within 72 hours**.
+We aim to respond to security reports **within 72 hours**.
 
 ---
 
-## 🚫 Responsible Disclosure Guidelines
+## Responsible Disclosure Guidelines
 
 We ask that you:
 - Do not publicly disclose the issue until it has been resolved.
@@ -37,14 +37,14 @@ We ask that you:
 
 ---
 
-## 📃 Disclosure Policy
+## Disclosure Policy
 
 - We follow a **coordinated disclosure** approach.
 - We appreciate responsible reporting and will publicly disclose the issue only **after a fix has been released**.
 
 --- 
 
-## ✅ Security Best Practices
+## Security Best Practices
 
 While using this project, we recommend you:
 
@@ -54,13 +54,13 @@ While using this project, we recommend you:
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 We value the contributions from the community and encourage responsible disclosure to help keep `HackWithZairza` safe and secure for all users.
 
 ---
 
-## 🔒 Resources
+## Resources
 
 - [GitHub Security Advisories](https://docs.github.com/en/code-security/security-advisories)
 - [OpenSSF Best Practices](https://bestpractices.dev/)
