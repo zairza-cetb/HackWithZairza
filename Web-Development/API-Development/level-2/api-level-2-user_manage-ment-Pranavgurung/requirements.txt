@@ -1,0 +1,3 @@
+Flask-CORS
+Flask-RESTful
+python-dotenv
