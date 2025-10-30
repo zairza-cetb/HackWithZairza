@@ -154,7 +154,7 @@ If not found, response (404):
 
 Request (PUT):
 
-PUT http://127.0.0.1:8000/api/users/{id}
+PUT http://127.0.0.1:8000/api/user/{id}
 Content-Type: application/json
 
 Body (must include the same id):
@@ -186,7 +186,7 @@ Response (200):
 
 Request:
 
-DELETE http://127.0.0.1:8000/api/users/{id}
+DELETE http://127.0.0.1:8000/api/user/{id}
 
 Response (200):
 
