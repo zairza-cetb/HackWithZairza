@@ -1,1 +1,22 @@
 .env
+
+# User-specific config file (template is config.json.example)
+config.json
+
+# Database files
+*.db
+*.db-journal
+
+# Log files
+*.log
+
+# Backup directory
+/backups/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+/venv/

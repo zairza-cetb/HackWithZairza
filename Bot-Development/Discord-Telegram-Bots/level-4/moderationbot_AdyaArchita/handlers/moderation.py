@@ -1,14 +1,15 @@
 import datetime
 import asyncio
+import html  # Import the html module for escaping
 from typing import Tuple
 from telegram import Update, ChatPermissions
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
-from telegram.error import BadRequest
+from telegram.error import BadRequest, TelegramError 
 
 from decorators import is_admin
 
-# --- Helper Functions ---
+#  Helper Functions 
 
 def get_target_user_and_reason(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Tuple[object, str] | Tuple[None, None]:
     """
@@ -48,7 +49,7 @@ async def log_action(context: ContextTypes.DEFAULT_TYPE, message: str):
         except Exception as e:
             print(f"Failed to send log message: {e}")
 
-# --- Core Moderation Commands ---
+# Core Moderation Commands 
 
 @is_admin
 async def warn(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -62,11 +63,13 @@ async def warn(update: Update, context: ContextTypes.DEFAULT_TYPE):
     moderator = update.effective_user
     new_warning_id, total_warnings = await db.add_warning(target_user.id, update.effective_chat.id, moderator.id, reason)
     
+    safe_reason = html.escape(reason)  #  Escape HTML
+    
     response = (
         f"<b>⚠️ User Warned</b> (Warning #{total_warnings})\n\n"
         f"<b>User:</b> {target_user.mention_html()} (<code>{target_user.id}</code>)\n"
         f"<b>Moderator:</b> {moderator.mention_html()}\n"
-        f"<b>Reason:</b> <code>{reason}</code>"
+        f"<b>Reason:</b> <code>{safe_reason}</code>"  #  Use safe reason
     )
     await update.message.reply_html(response)
     await log_action(context, response)
@@ -89,7 +92,8 @@ async def warnings(update: Update, context: ContextTypes.DEFAULT_TYPE):
     response = f"<b>📜 Warning history for {target_user.mention_html()}:</b>\n\n"
     for row in user_warnings:
         warn_id, _, _, mod_id, reason, ts = row
-        response += f"<b>ID: {warn_id}</b> | <b>Reason:</b> <code>{reason}</code>\n(<i>on {ts.split(' ')[0]}</i>)\n\n"
+        safe_reason = html.escape(reason)  #  Escape reason from DB
+        response += f"<b>ID: {warn_id}</b> | <b>Reason:</b> <code>{safe_reason}</code>\n(<i>on {ts.split(' ')[0]}</i>)\n\n"
     await update.message.reply_html(response)
 
 @is_admin
@@ -124,12 +128,13 @@ async def kick(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         await context.bot.ban_chat_member(chat_id=update.effective_chat.id, user_id=target_user.id)
         await context.bot.unban_chat_member(chat_id=update.effective_chat.id, user_id=target_user.id)
+        safe_reason = html.escape(reason)  
         
         response = (
             f"<b>👢 User Kicked</b>\n\n"
             f"<b>User:</b> {target_user.mention_html()} (<code>{target_user.id}</code>)\n"
             f"<b>Moderator:</b> {moderator.mention_html()}\n"
-            f"<b>Reason:</b> <code>{reason}</code>"
+            f"<b>Reason:</b> <code>{safe_reason}</code>" 
         )
         await update.message.reply_html(response)
         await log_action(context, response)
@@ -139,7 +144,7 @@ async def kick(update: Update, context: ContextTypes.DEFAULT_TYPE):
 @is_admin
 async def ban(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Bans a user. Usage: /ban [duration] [reason] (in reply)."""
-    target_user, _ = get_target_user_and_reason(update, context) # Reason is parsed manually here
+    target_user, _ = get_target_user_and_reason(update, context) 
     if not target_user:
         await update.message.reply_text("Error: Reply to a user to ban them.")
         return
@@ -159,11 +164,13 @@ async def ban(update: Update, context: ContextTypes.DEFAULT_TYPE):
             until_date=until_date
         )
         duration_text = f"for {duration_str}" if duration else "permanently"
+        safe_reason = html.escape(reason)  
+        
         response = (
             f"<b>🚫 User Banned {duration_text}</b>\n\n"
             f"<b>User:</b> {target_user.mention_html()} (<code>{target_user.id}</code>)\n"
             f"<b>Moderator:</b> {moderator.mention_html()}\n"
-            f"<b>Reason:</b> <code>{reason}</code>"
+            f"<b>Reason:</b> <code>{safe_reason}</code>"  
         )
         await update.message.reply_html(response)
         await log_action(context, response)
@@ -218,11 +225,13 @@ async def mute(update: Update, context: ContextTypes.DEFAULT_TYPE):
             until_date=until_date
         )
         duration_text = f"for {duration_str}" if duration else "permanently"
+        safe_reason = html.escape(reason)
+        
         response = (
             f"<b>🔇 User Muted {duration_text}</b>\n\n"
             f"<b>User:</b> {target_user.mention_html()} (<code>{target_user.id}</code>)\n"
             f"<b>Moderator:</b> {moderator.mention_html()}\n"
-            f"<b>Reason:</b> <code>{reason}</code>"
+            f"<b>Reason:</b> <code>{safe_reason}</code>"
         )
         await update.message.reply_html(response)
         await log_action(context, response)
@@ -329,10 +338,14 @@ async def profanity_filter(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message or not update.message.text: return
     
     # Do not moderate admins
-    chat_admins = await context.bot.get_chat_administrators(update.effective_chat.id)
-    if update.effective_user.id in {admin.user.id for admin in chat_admins}: return
+    try:
+        chat_admins = await context.bot.get_chat_administrators(update.effective_chat.id)
+        if update.effective_user.id in {admin.user.id for admin in chat_admins}: return
+    except TelegramError:
+        pass # Don't filter if we can't check admin status
 
-    banned_words = context.bot_data.get("config", {}).get("profanity_words", [])
+    #  Use "banned_words" to match config 
+    banned_words = context.bot_data.get("config", {}).get("banned_words", [])
     message_text_lower = update.message.text.lower()
     
     if any(word in message_text_lower for word in banned_words):

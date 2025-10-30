@@ -38,8 +38,17 @@ cd ModerationBot_YourGitHubUsername
 
 2. *Install Dependencies*
 It is highly recommended to use a Python virtual environment to manage dependencies and avoid conflicts.
+
 ```bash
+# Create the virtual environment
 python3 -m venv venv
+
+# Activate the virtual environment
+# On Windows: venv\Scripts\activate
+# On Linux/macOS:
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
