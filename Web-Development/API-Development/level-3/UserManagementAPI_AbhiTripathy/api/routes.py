@@ -26,7 +26,9 @@ def get_user(id: UUID):
 
 
 @router.put("/api/user/{id}")
-def update_user(new_user: User):
+def update_user(id: UUID, new_user: User):
+    if id != new_user.id:
+        raise HTTPException(status_code=400, detail="Path ID does not match user ID in request body.")
     for i, user in enumerate(user_list):
         if user.id == new_user.id:
             user_list[i] = new_user
@@ -42,4 +44,4 @@ def delete_user(id: UUID):
             del user_list[i]
             return {"Delete": "Successful"}
     raise HTTPException(
-        status_code=404, detail="users not found for this id.")
+        status_code=404, detail="Users not found for this id.")
