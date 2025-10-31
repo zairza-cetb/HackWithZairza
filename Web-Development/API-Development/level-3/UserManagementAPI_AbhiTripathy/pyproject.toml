@@ -1,0 +1,9 @@
+[project]
+name = "basiccrudapi-abhitripathy"
+version = "0.1.0"
+description = "A User Management API built with fastapi framework and uvicorn server"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi[all]>=0.119.0",
+]
